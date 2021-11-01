@@ -1,27 +1,23 @@
-import React from "react";
+import React from 'react';
 
-const Books = () => {
-  return (
-    <div>
-       <ul className='Book-list'>
-           <li>
-               <h2>Book 1</h2>
-               <button>Remove</button>
-           </li>
-           <li>
-               <h2>Book 2</h2>
-               <button>Remove</button>
-           </li>
-       </ul>
-      <form>
-        <label>
-          ADD NEW BOOK:
-          <input type="text" name="name" />
-        </label>
-        <input type="submit" value="ADD BOOK" />
-      </form>
-    </div>
-  );
-};
+const Books = () => (
+  <div>
+    <ul className="Book-list">
+      <li>
+        <h2>Book 1</h2>
+        <button type="button">Remove</button>
+      </li>
+      <li>
+        <h2>Book 2</h2>
+        <button type="button">Remove</button>
+      </li>
+    </ul>
+    <form>
+      <input id="title" type="text" name="name" />
+
+      <input type="submit" value="ADD BOOK" />
+    </form>
+  </div>
+);
 
 export default Books;

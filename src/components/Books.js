@@ -1,20 +1,12 @@
 import React from 'react';
+import BookData from './BookData';
 
 const Books = () => (
   <div>
-    <ul className="Book-list">
-      <li>
-        <h2>Book 1</h2>
-        <button type="button">Remove</button>
-      </li>
-      <li>
-        <h2>Book 2</h2>
-        <button type="button">Remove</button>
-      </li>
-    </ul>
+    <BookData />
     <form>
-      <input id="title" type="text" name="name" />
-
+      <input id="title" type="text" name="title" placeholder="Title" />
+      <input id="title" type="text" name="author" placeholder="Author" />
       <input type="submit" value="ADD BOOK" />
     </form>
   </div>

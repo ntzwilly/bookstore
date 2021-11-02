@@ -4,11 +4,15 @@ import { useDispatch } from 'react-redux';
 import BookData from './BookData';
 import { addBook } from '../redux/books/books';
 
+const categories = ['Drama', 'Horror', 'Tragedy', 'Gothic'];
+
 const Books = () => {
   const dispatch = useDispatch();
+  const [category, setCategory] = useState(categories[0]);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
+  const handleCategory = (event) => setCategory(event.target.value);
   const handleTitle = (event) => setTitle(event.target.value);
   const handleAuthor = (event) => setAuthor(event.target.value);
 
@@ -17,10 +21,12 @@ const Books = () => {
       id: uuidv4(),
       title,
       author,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
+    setCategory(categories[0]);
     event.preventDefault();
   };
 
@@ -46,6 +52,11 @@ const Books = () => {
           value={author}
           required
         />
+        <select value={category} onChange={handleCategory}>
+          {categories.map((category) => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
         <input type="submit" value="ADD BOOK" />
       </form>
     </div>

@@ -1,31 +1,19 @@
+// import PropTypes from 'prop-types';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const BookData = () => {
-  const BOOKS = [
-    {
-      id: 1,
-      title: 'Family Album',
-      author: 'Danielle Steel',
-    },
-    {
-      id: 2,
-      title: 'The Shinning',
-      author: 'Stephen King',
-    },
-    {
-      id: 3,
-      title: 'Wuthering heights',
-      author: 'Emily Brontë',
-    },
-  ];
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   return (
     <ul className="book-list">
-      {BOOKS.map((book) => (
+      {books.map((book) => (
         <li key={book.id}>
           <h2>{book.title}</h2>
           <h3>{book.author}</h3>
-          <button type="button">Remove</button>
+          <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
         </li>
       ))}
     </ul>

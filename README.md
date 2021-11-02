@@ -2,7 +2,7 @@
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-> Using React Router:
+> Add & Remove operations:
 
 In this step I configure the Redux Store, write actions and reducer for adding and removing books.  
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook, loadBooks } from '../redux/books/books';
+import { deleteBook, loadBooks } from '../redux/books/books';
 import Progress from './Progress';
 
 const BookData = () => {
@@ -21,7 +21,7 @@ const BookData = () => {
           <Progress progress={book.progress} />
           <div>
             <button type="button">Comments</button>
-            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+            <button type="button" onClick={() => dispatch(deleteBook(book.item_id))}>Remove</button>
             <button type="button">Edit</button>
           </div>
         </li>

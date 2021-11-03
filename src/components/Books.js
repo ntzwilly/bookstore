@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import BookData from './BookData';
 import { createBook } from '../redux/books/books';
 
-const categories = ['Drama', 'Horror', 'Tragedy', 'Gothic'];
+const categories = ['Action', 'Science Fiction', 'Economy'];
 
 const Books = () => {
   const dispatch = useDispatch();

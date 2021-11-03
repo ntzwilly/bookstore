@@ -1,9 +1,12 @@
+import * as API from '../../utils/api';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
 const initialState = [
   {
-    id: 1,
+    item_id: 'mock-1',
     category: 'Drama',
     title: 'Family Album',
     author: 'Danielle Steel',
@@ -13,7 +16,7 @@ const initialState = [
     },
   },
   {
-    id: 2,
+    item_id: 'mock-2',
     category: 'Horror',
     title: 'The Shinning',
     author: 'Stephen King',
@@ -23,7 +26,7 @@ const initialState = [
     },
   },
   {
-    id: 3,
+    item_id: 'mock-3',
     category: 'Tragedy, gothic',
     title: 'Wuthering heights',
     author: 'Emily Brontë',
@@ -34,7 +37,9 @@ const initialState = [
   },
 ];
 
-export const addBook = (payload) => ({
+API.createApp();
+
+const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
@@ -44,18 +49,55 @@ export const removeBook = (id) => ({
   id,
 });
 
+const setBooks = (payload) => ({
+  type: SET_BOOKS,
+  payload,
+});
+
+export const createBook = (book) => async (dispatch) => {
+  const isCreated = await API.createBook(book);
+  if (isCreated) {
+    dispatch(addBook(book));
+  }
+};
+
+export const loadBooks = () => async (dispatch) => {
+  const books = await API.getBooks();
+
+  if (books) {
+    dispatch(setBooks(books));
+  }
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, {
         ...action.payload,
+        author: 'Author not set',
         progress: {
-          currentChapter: 'Preface',
+          currentChapter: 'Introduction',
           completed: '0',
         },
       }];
+    case SET_BOOKS: {
+      const saved = Object.entries(action.payload).map(([key, value]) => {
+        const [book] = value;
+        return {
+          item_id: key,
+          ...book,
+          author: 'Author not set',
+          progress: {
+            currentChapter: 'Introduction',
+            completed: '0',
+          },
+        };
+      });
+
+      return state.concat(saved);
+    }
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.id);
     default:
       return state;
   }

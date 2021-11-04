@@ -15,7 +15,7 @@ function App() {
         <Router>
           <header className="header">
             <div className="nav-container">
-              <h1 className="header-h1">BookStore CMS</h1>
+              <h1 className="header-h1">Bookstore CMS</h1>
               <nav className="navigation">
                 <ul>
                   <li>

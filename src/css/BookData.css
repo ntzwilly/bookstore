@@ -33,10 +33,6 @@
   margin-bottom: 1rem;
 }
 
-.action-button {
-  margin-bottom: 0;
-}
-
 .grid-center {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,13 +41,13 @@
 
 .grid-item {
   border-right: 0.125rem solid #e8e8e8;
-  border-right: 0.125rem solid #e8e8e8;
   margin-right: 4.5rem;
 }
 
 .action-button {
+  margin-bottom: 0;
   border: none;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
   background-color: #fff;
   cursor: pointer;
 }

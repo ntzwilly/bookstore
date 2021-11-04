@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteBook, loadBooks } from '../redux/books/books';
 import Progress from './Progress';
+import '../css/BookData.css';
 
 const BookData = () => {
   const books = useSelector((state) => state.books);

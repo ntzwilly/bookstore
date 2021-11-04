@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../css/Progress.css';
 
 const Progress = ({ progress }) => {
   const { currentChapter, completed } = progress;

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import BookData from './BookData';
 import { createBook } from '../redux/books/books';
+import '../css/Books.css';
 
 const categories = ['Action', 'Science Fiction', 'Economy'];
 
@@ -27,7 +28,7 @@ const Books = () => {
   };
 
   return (
-    <div>
+    <div className="book-container">
       <BookData />
       <form onSubmit={handleSubmit}>
         <input

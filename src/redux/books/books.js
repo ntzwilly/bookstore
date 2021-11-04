@@ -1,61 +1,84 @@
+import * as API from '../../utils/api';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
-const initialState = [
-  {
-    id: 1,
-    category: 'Drama',
-    title: 'Family Album',
-    author: 'Danielle Steel',
-    progress: {
-      currentChapter: 'Chapter 2',
-      completed: '11',
-    },
-  },
-  {
-    id: 2,
-    category: 'Horror',
-    title: 'The Shinning',
-    author: 'Stephen King',
-    progress: {
-      currentChapter: 'Chapter 7',
-      completed: '72',
-    },
-  },
-  {
-    id: 3,
-    category: 'Tragedy, gothic',
-    title: 'Wuthering heights',
-    author: 'Emily Brontë',
-    progress: {
-      currentChapter: 'Chapter 11',
-      completed: '98',
-    },
-  },
-];
+const initialState = [];
 
-export const addBook = (payload) => ({
+API.createApp();
+
+const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
 
-export const removeBook = (id) => ({
+const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
 
+const setBooks = (payload) => ({
+  type: SET_BOOKS,
+  payload,
+});
+
+export const createBook = (book) => async (dispatch) => {
+  const isCreated = await API.createBook(book);
+  if (isCreated) {
+    dispatch(addBook(book));
+  }
+};
+
+export const deleteBook = (id) => async (dispatch) => {
+  const isDeleted = await API.deleteBook(id);
+
+  if (isDeleted) {
+    dispatch(removeBook(id));
+  }
+};
+
+export const loadBooks = () => async (dispatch) => {
+  await API.createApp();
+  const books = await API.getBooks();
+
+  if (books) {
+    dispatch(setBooks(books));
+  }
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, {
-        ...action.payload,
-        progress: {
-          currentChapter: 'Preface',
-          completed: '0',
+      return [
+        ...state,
+        {
+          ...action.payload,
+          author: 'Author not set',
+          progress: {
+            currentChapter: 'Introduction',
+            completed: '0',
+          },
         },
-      }];
+      ];
+    case SET_BOOKS: {
+      const saved = Object.entries(action.payload).map(([key, value]) => {
+        const [book] = value;
+        return {
+          item_id: key,
+          ...book,
+          author: 'Author not set',
+          progress: {
+            currentChapter: 'Introduction',
+            completed: `${Math.floor(Math.random() * 100) + 1}`,
+          },
+        };
+      });
+
+      return state.concat(saved);
+    }
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.id);
     default:
       return state;
   }

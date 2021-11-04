@@ -8,8 +8,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(245,246,250);
+}
+
 .app-container {
-  margin: 6rem 6.25rem;
+  margin: 3rem 6.25rem;
 }
 
 .header,  
@@ -21,6 +25,7 @@
 
 .header {
   font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
   width: 100%;
   padding: 0.8rem 3rem;
   border: 1px solid #e8e8e8;
@@ -53,4 +58,15 @@
   font-family: Montserrat;
   font-size: 0.813rem;
   color: #121212;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0290ff;
 }

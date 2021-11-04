@@ -8,13 +8,20 @@ const Progress = ({ progress }) => {
   return (
     <div className="grid-center">
       <div className="grid-item">
-        <p className="percentage">{`${completed}%`}</p>
-        <p className="completed">Completed</p>
+        <div className="percentage">
+          <div className="progress-circle" />
+          <div>
+            <span>{`${completed}%`}</span>
+            <p className="completed">Completed</p>
+          </div>
+        </div>
       </div>
       <div className="grid-item-1">
         <p className="current-chapter">CURRENT CHAPTER</p>
         <p className="chapter">{currentChapter}</p>
-        <button className="update-progress" type="button">UPDATE PROGRESS</button>
+        <button className="update-progress" type="button">
+          UPDATE PROGRESS
+        </button>
       </div>
     </div>
   );

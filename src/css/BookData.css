@@ -1,10 +1,10 @@
 .book-list {
-  background-color: #f5f6fa;
+  background-color: #fafafa;
 }
 
 .book-list-li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   background-color: #fff;
   margin-bottom: 1rem;
   padding: 1rem 1.5rem;

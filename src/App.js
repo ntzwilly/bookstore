@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BsFillPersonFill } from 'react-icons/bs';
 import Books from './components/Books';
 import Categories from './components/Categories';
 import store from './redux/configureStore';
@@ -26,7 +27,7 @@ function App() {
                 </ul>
               </nav>
             </div>
-            <div>Logo</div>
+            <div className="logo"><BsFillPersonFill /></div>
           </header>
 
           <Switch>

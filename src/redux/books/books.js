@@ -6,6 +6,8 @@ const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
 const initialState = [];
 
+API.createApp();
+
 const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,

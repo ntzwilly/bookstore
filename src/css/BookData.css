@@ -1,0 +1,67 @@
+.book-list {
+  background-color: #f5f6fa;
+}
+
+.book-list-li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #e8e8e8;
+}
+
+.book-list-li h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.book-list-li h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.25rem;
+  color: #121212;
+}
+
+.book-list-li h3,
+.action-button {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #4386bf;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  margin-bottom: 0;
+}
+
+.grid-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.grid-item {
+  border-right: 0.125rem solid #e8e8e8;
+  border-right: 0.125rem solid #e8e8e8;
+  margin-right: 4.5rem;
+}
+
+.action-button {
+  border: none;
+  padding: 0rem 1rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.btn-1,
+.btn-2 {
+  padding-left: 0;
+  border-right: 0.125rem solid #e8e8e8;
+}
+
+.btn-2 {
+  padding-left: 1rem;
+}

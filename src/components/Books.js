@@ -30,6 +30,8 @@ const Books = () => {
   return (
     <div className="book-container">
       <BookData />
+      <hr className="line" />
+      <h2 className="add-new">ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
         <input
           id="title"

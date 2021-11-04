@@ -6,16 +6,17 @@ const Progress = ({ progress }) => {
   const { currentChapter, completed } = progress;
 
   return (
-    <>
-      <div>
-        <p>{`${completed}%`}</p>
-        <p>Completed</p>
+    <div className="grid-center">
+      <div className="grid-item">
+        <p className="percentage">{`${completed}%`}</p>
+        <p className="completed">Completed</p>
       </div>
-      <div>
-        <p>CURRENT CHAPTER</p>
-        <p>{currentChapter}</p>
+      <div className="grid-item-1">
+        <p className="current-chapter">CURRENT CHAPTER</p>
+        <p className="chapter">{currentChapter}</p>
+        <button className="update-progress" type="button">UPDATE PROGRESS</button>
       </div>
-    </>
+    </div>
   );
 };
 

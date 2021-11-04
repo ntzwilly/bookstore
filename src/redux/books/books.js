@@ -6,14 +6,12 @@ const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
 const initialState = [];
 
-API.createApp();
-
 const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
 
-export const removeBook = (id) => ({
+const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
@@ -39,6 +37,7 @@ export const deleteBook = (id) => async (dispatch) => {
 };
 
 export const loadBooks = () => async (dispatch) => {
+  await API.createApp();
   const books = await API.getBooks();
 
   if (books) {
@@ -69,7 +68,7 @@ const reducer = (state = initialState, action) => {
           author: 'Author not set',
           progress: {
             currentChapter: 'Introduction',
-            completed: '0',
+            completed: `${Math.floor(Math.random() * 100) + 1}`,
           },
         };
       });

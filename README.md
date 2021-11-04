@@ -2,15 +2,21 @@
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-> Add & Remove operations:
+> Bookstore styling
 
-In this step I configure the Redux Store, write actions and reducer for adding and removing books.  
+![Bookstore](https://user-images.githubusercontent.com/9049260/140428522-95b344da-9206-464e-9a68-0478e5aa65d9.png)
+
+In this last project, I use Zeplin collaboration to add styling to the website.
 
 ## Built With
 
 - React & Redux
 - JSX
 - CSS
+
+## Live Demo
+
+- Click the link to view a live demo on [Heroku](https://bookstore-w01.herokuapp.com/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

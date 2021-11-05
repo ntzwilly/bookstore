@@ -1,0 +1,59 @@
+.book-container {
+  background-color: #fafafa;
+  padding: 1.5rem 3rem;
+}
+
+.line {
+  border: 1px solid #e8e8e8;
+  margin: 30px 0;
+  margin-bottom: 20px;
+}
+
+.add-new {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form {
+  display: grid;
+  width: 100%;
+  grid-gap: 1.7rem;
+  grid-template-columns: 2.5fr 1.8fr 0.8fr;
+  margin-bottom: 5rem;
+}
+
+#title,
+.select {
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  border: 1px solid #e8e8e8;
+  padding: 0.4rem 0.5rem;
+}
+
+.select {
+  background-color: #fff;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  padding-right: 15px;
+  background-image: url('../assets/down-arrow.svg');
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  filter: contrast(160%);
+  border: 1px solid rgb(190, 188, 188);
+}
+
+.submit {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 3px;
+}

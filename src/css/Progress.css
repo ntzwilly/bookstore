@@ -1,0 +1,53 @@
+.percentage {
+  display: flex;
+  flex-direction: row;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.completed {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.current-chapter {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.chapter {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.update-progress {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-color: #0290ff;
+  cursor: pointer;
+  font-size: 0.813rem;
+  font-weight: 300;
+  border: none;
+  padding: 0.45rem 1.3rem;
+  border-radius: 3px;
+}
+
+.progress-circle {
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-right: 1rem;
+}

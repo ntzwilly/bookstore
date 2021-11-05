@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BsFillPersonFill } from 'react-icons/bs';
 import Books from './components/Books';
 import Categories from './components/Categories';
 import store from './redux/configureStore';
@@ -10,30 +11,35 @@ import store from './redux/configureStore';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
-        <header>
-          <h1>BookStore CMS</h1>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/books">BOOKS</Link>
-              </li>
-              <li>
-                <Link to="/categories">CATEGORIES</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+      <div className="app-container">
+        <Router>
+          <header className="header">
+            <div className="nav-container">
+              <h1 className="header-h1">Bookstore CMS</h1>
+              <nav className="navigation">
+                <ul>
+                  <li>
+                    <Link className="link" to="/books">BOOKS</Link>
+                  </li>
+                  <li>
+                    <Link className="link" to="/categories">CATEGORIES</Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className="logo"><BsFillPersonFill /></div>
+          </header>
 
-        <Switch>
-          <Route path="/categories">
-            <Categories />
-          </Route>
-          <Route path="/">
-            <Books />
-          </Route>
-        </Switch>
-      </Router>
+          <Switch>
+            <Route path="/categories">
+              <Categories />
+            </Route>
+            <Route path="/">
+              <Books />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
     </Provider>
   );
 }

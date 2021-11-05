@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import BookData from './BookData';
 import { createBook } from '../redux/books/books';
+import '../css/Books.css';
 
 const categories = ['Action', 'Science Fiction', 'Economy'];
 
@@ -27,9 +28,11 @@ const Books = () => {
   };
 
   return (
-    <div>
+    <div className="book-container">
       <BookData />
-      <form onSubmit={handleSubmit}>
+      <hr className="line" />
+      <h2 className="add-new">ADD NEW BOOK</h2>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           id="title"
           type="text"
@@ -39,12 +42,12 @@ const Books = () => {
           value={title}
           required
         />
-        <select value={category} onChange={handleCategory}>
+        <select className="select" value={category} onChange={handleCategory}>
           {categories.map((category) => (
             <option key={category} value={category}>{category}</option>
           ))}
         </select>
-        <input type="submit" value="ADD BOOK" />
+        <input className="submit" type="submit" value="ADD BOOK" />
       </form>
     </div>
   );

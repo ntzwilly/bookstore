@@ -6,7 +6,7 @@
 
 ![Bookstore](https://user-images.githubusercontent.com/9049260/140428522-95b344da-9206-464e-9a68-0478e5aa65d9.png)
 
-I used Zeplin collaboration tool for styling to the website.
+I used Zeplin collaboration tool to style the website.
 
 ## Built With
 
